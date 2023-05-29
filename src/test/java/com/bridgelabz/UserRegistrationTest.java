@@ -22,11 +22,11 @@ public class UserRegistrationTest {
         }
 
         try {
-            System.out.print("\nEnter last Name : ");
-            String string = "ravichnandran";
-            Pattern pattern = Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
-            Matcher matcher = pattern.matcher(string);
-            System.out.println(string);
+            System.out.print("\nEnter Mobile Number : ");
+            String mobileNumber = "91234567890";
+            Pattern pattern = Pattern.compile("^91[0-9]{10}$");
+            Matcher matcher = pattern.matcher(mobileNumber);
+            System.out.println(mobileNumber);
             if (matcher.matches() == false) {
                 throw new CustomException(matcher.matches());
             }
