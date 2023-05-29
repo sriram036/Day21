@@ -10,6 +10,29 @@ public class UserRegistrationTest {
 
     @Test
     public void givenNameShouldReturnCustomExceptionIfNameIsNotValid(){
-        System.out.println("Welcome to Day 21 assignment.");
+
+        class CustomException extends Exception {
+            boolean isValid;
+            CustomException(boolean bool) {
+                isValid = bool;
+            }
+            public String toString() {
+                return ("The Given value is " + isValid);
+            }
+        }
+
+        try {
+            System.out.print("\nEnter First Name : ");
+            String string = "sriram";
+            Pattern pattern = Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
+            Matcher matcher = pattern.matcher(string);
+            System.out.println(string);
+            if (matcher.matches() == false) {
+                throw new CustomException(matcher.matches());
+            }
+        }catch (CustomException e) {
+            System.out.println("Custom Exception : " + "\"" + e + "\"");
+        }
+
     }
 }
