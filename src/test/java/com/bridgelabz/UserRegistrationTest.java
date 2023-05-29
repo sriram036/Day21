@@ -22,8 +22,8 @@ public class UserRegistrationTest {
         }
 
         try {
-            System.out.print("\nEnter First Name : ");
-            String string = "sriram";
+            System.out.print("\nEnter last Name : ");
+            String string = "ravichnandran";
             Pattern pattern = Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
             Matcher matcher = pattern.matcher(string);
             System.out.println(string);
